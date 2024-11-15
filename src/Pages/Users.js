@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { dataGet } from "../Config/firebase/firebasefunction";
 import Screen from "../Components/Screen";
+import { useNavigate } from "react-router-dom";
 
 export default function Users() {
   const [userList, setUserList] = useState([]);
+  const navigation = useNavigate()
 
   useEffect(() => {
     async function fetchData() {
@@ -17,6 +19,7 @@ export default function Users() {
     <> <Screen 
     title={"Users"}
     label={"Add Users"}
+    onclick={()=>{navigation('/signup')}}
      />
       <div className="p-6">
 

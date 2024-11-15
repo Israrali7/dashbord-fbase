@@ -3,6 +3,8 @@ import { Link, Route, Routes } from 'react-router-dom';
 import Users from './Users';
 import Comments from './Comments';
 import FormComment from './FormComments';
+import Post from './Post';
+import Todo from './Todo';
 
 export default function Home() {
     return (
@@ -16,10 +18,10 @@ export default function Home() {
                     <Link className='text-[#F7FAFC]' to="users">USER</Link>
                 </div>
                 <div className='bg-[#4A5568] m-3 p-2 rounded-lg text-2xl hover:bg-[#718096]'>
-                    <Link className='text-[#F7FAFC]' to="contact">POST</Link>
+                    <Link className='text-[#F7FAFC]' to="post">POST</Link>
                 </div>
                 <div className='bg-[#4A5568] m-3 p-2 rounded-lg text-2xl hover:bg-[#718096]'>
-                    <Link className='text-[#F7FAFC]' to="profile">TODOS</Link>
+                    <Link className='text-[#F7FAFC]' to="todo">TODOS</Link>
                 </div>
                 <div className='bg-[#4A5568] m-3 p-2 rounded-lg text-2xl hover:bg-[#718096]'>
                     <Link className='text-[#F7FAFC]' to="comments">COMMENT</Link>
@@ -32,9 +34,8 @@ export default function Home() {
                     <Route path="users" element={<Users />} />
                     <Route path="comments" element={<Comments />} />
                     <Route path="formcomments" element={<FormComment />} />
-                    {/* Add more routes here for "POST" and "TODOS" if needed */}
-                    <Route path="contact" element={<div>Post Page</div>} />
-                    <Route path="profile" element={<div>Todos Page</div>} />
+                    <Route path="post" element={<Post/>} />
+                    <Route path="todo" element={<Todo/>} />
                 </Routes>
             </div>
         </div>
